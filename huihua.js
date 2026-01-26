@@ -109,8 +109,7 @@
         backgroundCanvas.style.position = 'absolute';
         backgroundCanvas.style.zIndex = '1';
         backgroundCanvas.style.touchAction = 'none';
-        backgroundCanvas.style.userSelect = 'none';
-        backgroundCanvas.style.webkitUserSelect = 'none';
+        backgroundCanvas.style.userSelect = 'none';      
         backgroundCanvas.style.left = '0';
         backgroundCanvas.style.top = '0';
 
@@ -122,10 +121,9 @@
         drawingCanvas.style.zIndex = '2';
         drawingCanvas.style.touchAction = 'none';
         drawingCanvas.style.userSelect = 'none';
-        drawingCanvas.style.webkitUserSelect = 'none';
+      
         drawingCanvas.style.left = '0';
         drawingCanvas.style.top = '0';
-
         // 创建预览画布（用于显示预览）
         const previewCanvas = document.createElement('canvas');
         previewCanvas.id = 'previewCanvas';
@@ -133,8 +131,7 @@
         previewCanvas.style.position = 'absolute';
         previewCanvas.style.zIndex = '3';
         previewCanvas.style.touchAction = 'none';
-        previewCanvas.style.userSelect = 'none';
-        previewCanvas.style.webkitUserSelect = 'none';
+        previewCanvas.style.userSelect = 'none';        
         previewCanvas.style.pointerEvents = 'none'; // 重要：不拦截鼠标事件
         previewCanvas.style.left = '0';
         previewCanvas.style.top = '0';

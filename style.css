@@ -1073,7 +1073,7 @@ body {
     margin-bottom: 8px !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;    
+    align-items: center !important;
     width: 100% !important;
 }
 
@@ -1082,16 +1082,13 @@ body {
     background: #f8f9fa;
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
-    width: 100%;
-    min-height: 200px;
-    max-height: 800px;    /* 添加最大高度限制 */
-    overflow: hidden;
-    padding: 0;
-    position: relative;    /* 添加相对定位 */
-    display: flex !important;
+    width: 100% !important;
+    min-height: 200px !important;
+    max-height: 768px !important;
+
     justify-content: center !important;
     align-items: center !important;
-    margin: 0 auto !important;   
+    margin: 0 auto !important;
     background: #f8f9fa !important;
 }
 
@@ -1114,16 +1111,6 @@ body {
     background: linear-gradient(135deg, #7B1FA2, #6A1B9A) !important;
     border-color: #6A1B9A !important;
     box-shadow: 0 0 0 2px rgba(156, 39, 176, 0.3) !important;
-}
-
-/* 确保画布元素本身也自适应 */
-#drawingCanvas,
-#backgroundCanvas {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain;
 }
 
 /* 颜色工具栏卡片 */
@@ -1981,12 +1968,13 @@ body {
         width: 32px;
         height: 32px;
     }
-     .tool-btn.eraser-btn,
+
+    .tool-btn.eraser-btn,
     .tool-btn.lasso-btn,
     .tool-btn.line-tool {
         display: none !important;
     }
-    
+
     .toolbar-container {
         justify-content: flex-start !important;
         overflow-x: auto !important;
