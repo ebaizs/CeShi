@@ -278,12 +278,29 @@ body {
     flex-wrap: wrap;
     gap: var(--space-lg);
     box-shadow: var(--shadow-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* 保证整体响应式 */
 }
 
 .header-left h1 {
     font-size: 1.8rem;
     margin-bottom: var(--space-xs);
+    margin: 0;
+    white-space: nowrap;
+    /* 防止标题换行 */
     font-weight: 700;
+}
+
+/* 技术支持文字样式 */
+.support-info {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(223, 217, 217);
+    white-space: nowrap;
+    /* 防止文字换行 */
 }
 
 .header-left p {
@@ -554,7 +571,7 @@ body {
 .special-checkboxes .placeholder {
     color: var(--text-muted);
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     align-self: center;
     width: 100%;
     text-align: center;
@@ -571,7 +588,7 @@ body {
     border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-primary);
     user-select: none;
     margin: 1px;
@@ -1517,11 +1534,6 @@ body {
     transition: all 0.3s;
 }
 
-.import-btn {
-    background: linear-gradient(135deg, #17a2b8, #138496);
-    color: white;
-}
-
 .local-btn {
     background: linear-gradient(135deg, #f72585, #b5179e);
     color: white;
@@ -1748,8 +1760,22 @@ body {
         flex-direction: row;
     }
 
+    .header-right {
+        flex-shrink: 0;
+        /* 右侧区域不压缩 */
+    }
+
     .header-left {
         display: block;
+        flex: 1;
+        /* 让左侧区域占据剩余空间 */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        /* 禁止换行 */
+        width: 100%;
+        /* 确保占满父容器宽度 */
     }
 
     .form-row {
@@ -1806,36 +1832,6 @@ body {
         padding: var(--space-sm);
     }
 
-    /* 小屏下云端操作按钮一行显示 */
-    .cloud-actions {
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 4px;
-        /* 适当缩小间距 */
-    }
-
-    .cloud-actions .cloud-btn {
-        flex: 1 1 0;
-        white-space: nowrap;
-        padding: 8px 4px;
-        /* 根据实际效果调整 */
-        font-size: 12px;
-    }
-
-    /* 小屏下导出操作按钮一行显示 */
-    .export-actions {
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        gap: 4px;
-    }
-
-    .export-actions .export-btn {
-        flex: 1 1 0;
-        white-space: nowrap;
-        padding: 10px 4px;
-        font-size: 13px;
-    }
-
     .main-header {
         flex-direction: column;
         align-items: stretch;
@@ -1845,6 +1841,14 @@ body {
 
     .header-left {
         display: none;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .support-info {
+        font-size: 12px;
+        white-space: normal;
     }
 
     .header-right {
@@ -1962,16 +1966,6 @@ body {
     :root {
         --space-md: 12px;
         --space-lg: 16px;
-    }
-
-    .cloud-actions .cloud-btn {
-        padding: 6px 2px;
-        font-size: 11px;
-    }
-
-    .export-actions .export-btn {
-        padding: 8px 2px;
-        font-size: 12px;
     }
 
     .switch-btn {
