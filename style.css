@@ -1944,7 +1944,9 @@ body {
     }
 
     .export-content {
-        max-height: 400px;
+        max-height: 60vh;
+        overflow-y: auto;
+        padding-bottom: var(--space-md);
     }
 
     .export-record-header {
@@ -1967,6 +1969,14 @@ body {
         --space-md: 12px;
         --space-lg: 16px;
     }
+    .history-list {
+        max-height: 300px !important;  /* 根据实际需要调整高度 */
+        
+    }
+    /* 确保每个历史条目不会过高（例如限制内边距） */
+    .history-item {
+        padding: 12px;
+    }
 
     .switch-btn {
         padding: 8px 6px;
@@ -1975,6 +1985,10 @@ body {
 
     .switch-btn span {
         font-size: 12px;
+    }
+
+    .export-content {
+        max-height: 55vh;
     }
 
     .btn {
@@ -2136,5 +2150,22 @@ body {
 
     .tool-btn .text-xs {
         font-size: 9px !important;
+    }
+}
+
+/* 清除色块下拉菜单样式 */
+.color-item .clear-color-select {
+    margin-left: auto;
+    min-width: 60px;
+}
+
+@media (max-width: 480px) {
+    .color-item .clear-color-select {
+        min-width: 50px;
+        font-size: 10px;
+    }
+
+    .color-item .clear-color-select option {
+        font-size: 10px;
     }
 }
